@@ -11,9 +11,11 @@
 			<p class='card-text'>{{user.email}}</p>
 			<p>{{user.numberOfComments}} 已評論餐廳</p>
 		</div>
-		<div>
-			<a href='/users/{{user.id}}/edit' class='btn btn-primary'>Edit</a>
-		</div>
+		{{#ifCond user.id loggedInUser.id}}
+			<div>
+				<a href='/users/{{User.id}}/edit' class='btn btn-primary'>Edit</a>
+			</div>
+		{{/ifCond}}
 	</div>
 </div>
 
